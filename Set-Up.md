@@ -146,8 +146,8 @@ Entry.objects.filter(pub_date__year=2023)
 Entry.objects.all().filter(pub_date__year=2023)
 ```
 
-* Chaining filters
-This takes the initial QuerySet of all entries in the database, adds a filter, then an exclusion, then another filter. 
+* Chaining filters.
+* This takes the initial QuerySet of all entries in the database, adds a filter, then an exclusion, then another filter. 
 ```shell
 Entry.objects.filter(headline__startswith="My second").exclude(pub_date__gte=datetime.date.today()).filter(pub_date__gte=datetime.date(2005, 1, 30))
 ```
